@@ -45,6 +45,9 @@ function extract_image() {
             fi
         fi
 
+        # it will be The cached tar is /home/cuongdm/.cache/image-create/Fedora-Cloud-Base-37-1.7.x86_64.tgz
+        echo "The cached tar is $CACHED_TAR"
+        echo "The cached image is $CACHED_IMAGE"
         if [ ! -f $CACHED_TAR -o \
             $CACHED_IMAGE -nt $CACHED_TAR ] ; then
             echo "Repacking base image as tarball."
@@ -63,11 +66,13 @@ function extract_image() {
                 CACHED_IMAGE=$QCOW2_FILE
             fi
 
+            echo "Converting $CACHED_IMAGE to $RAW_FILE"
             qemu-img convert -f qcow2 -O raw $CACHED_IMAGE $RAW_FILE
 
             # kpartx fails if no /dev/loop* exists, "losetup -f" prints first unused
             # loop device and creates it if it doesn't exist
             LOOPDEV_BASE=$(basename $(sudo losetup -f))
+            echo "The LOOPDEV_BASE is $LOOPDEV_BASE"
 
             # add partition mappings
             sudo kpartx -av $RAW_FILE
@@ -132,6 +137,9 @@ function extract_image() {
 
             mkdir $WORKING/mnt
             ROOT_FSTYPE=$(sudo blkid -o value -s TYPE $ROOT_LOOPDEV)
+            echo "Root filesystem is $ROOT_FSTYPE"
+            echo "$WORKING device is $(sudo blkid -o value -s TYPE $WORKING/mnt)"
+
             if [ "xfs" = "$ROOT_FSTYPE" ]; then
                 # mount xfs with nouuid, just in case that uuid is already mounted
                 # use ro to avoid/workaround xfs uuid issues on older
@@ -150,8 +158,12 @@ function extract_image() {
                 MOUNTOPTS=""
             fi
 
+            echo "Mounting with options: $MOUNTOPTS"
+            echo "Mounting $ROOT_LOOPDEV to $WORKING/mnt"
+
             sudo mount $MOUNTOPTS $ROOT_LOOPDEV $WORKING/mnt
             EACTION="sudo umount -f $WORKING/mnt ; $EACTION"
+            echo "EACTION is $EACTION"
             trap "$EACTION" EXIT
 
             if [ ! -z "$BOOT_LOOPDEV" ]; then

@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a40b9417-4aa4-4907-884f-099df37608d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/diskimage_builder/lib/common-functions" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/lib/common-functions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/environment.d/11-yum-dnf.bash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/pre-install.d/00-02-set-fedora-mirror" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/pre-install.d/02-set-machine-id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/element-deps" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/element-deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/root.d/10-fedora-cloud-image" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/root.d/10-fedora-cloud-image" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/sysprep/bin/extract-image" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/sysprep/bin/extract-image" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diskimage_builder/lib/disk-image-create" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/lib/disk-image-create" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "lab/fedora-coreos-39",
-    "last_opened_file_path": "/home/cuongdm/Exdisk/Work/magnum",
+    "last_opened_file_path": "/home/cuongdm/Exdisk/Work/diskimage-builder/diskimage_builder/elements/fedora-coreos/environment.d",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -42,6 +49,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/environment.d" />
+      <recent name="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,7 +66,7 @@
       <workItem from="1701790610759" duration="2841000" />
       <workItem from="1701966429158" duration="13000" />
       <workItem from="1701966448076" duration="74000" />
-      <workItem from="1702004345886" duration="4644000" />
+      <workItem from="1702004345886" duration="18028000" />
     </task>
     <servers />
   </component>

@@ -47,6 +47,7 @@ else
       CACHED_IMAGE=$DIB_IMAGE_CACHE/$BASE_IMAGE_FILE
       ;;
     esac
+    ;;
   *)
     echo "[ERROR] Unknown ARCH: ${ARCH}"
     exit 1

@@ -261,6 +261,7 @@ fi
 for X in ${!IMAGE_TYPES[@]}; do
     case "${IMAGE_TYPES[$X]}" in
         qcow2)
+            echo "Using qcow2"
             if ! type qemu-img > /dev/null 2>&1; then
                 echo "qcow2 output format specified but qemu-img executable not found."
                 exit 1
