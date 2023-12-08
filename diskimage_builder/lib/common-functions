@@ -19,6 +19,8 @@
 # chroot environment, so it needs to be very generic.
 DIB_RUN_PARTS=${_LIB}/dib-run-parts
 
+set -x
+
 function tmpfs_check() {
   local echo_message=${1:-1}
   [ "$DIB_NO_TMPFS" == "0" ] || return 1
@@ -346,6 +348,7 @@ function arg_to_elements() {
       echo "ERROR: element-info failed to expand elements."
       exit 1
   fi
+  # will be 'export IMAGE_ELEMENT='\''rpm-distro manifests install-types source-repositories base block-device-mbr yum redhat-common pkg-map fedora dib-init-system bootloader vm package-installs install-bin sysprep dkms cache-url'\''
   eval "$elinfo_out"
   echo "Expanded element dependencies to: $IMAGE_ELEMENT"
 }
