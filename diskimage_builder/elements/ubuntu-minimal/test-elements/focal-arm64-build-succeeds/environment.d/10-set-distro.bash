@@ -1,1 +1,1 @@
-export DIB_RELEASE=focal
+export DIB_RELEASE=jammy
