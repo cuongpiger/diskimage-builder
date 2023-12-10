@@ -20,13 +20,17 @@ until curl -o "${_CONTAINERD_TMP}/cri-containerd.tar.gz" -L "${CONTAINERD_TARBAL
 done
 
 # Verify the checksum
-if ! echo "${CONTAINERD_TARBALL_SHA256} /srv/magnum/cri-containerd.tar.gz" | sha256sum -c -; then
+if ! echo "${CONTAINERD_TARBALL_SHA256} ${_CONTAINERD_TMP}/cri-containerd.tar.gz" | sha256sum -c -; then
   echo "[ERROR] cri-containerd.tar.gz computed checksum did NOT match, exiting."
   exit 1
 fi
 
 # Untar the tarball
-tar xzvf /srv/magnum/cri-containerd.tar.gz -C / --no-same-owner --touch --no-same-permissions
+tar xzvf ${_CONTAINERD_TMP}/cri-containerd.tar.gz -C / --no-same-owner --touch --no-same-permissions
+rm -rf ${_CONTAINERD_TMP}
+
+# Install podman
+apt-get install -y podman
 
 # Reload the daemon and start containerd
 systemctl daemon-reload

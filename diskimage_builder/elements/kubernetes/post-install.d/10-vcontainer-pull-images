@@ -1,0 +1,41 @@
+#!/bin/bash
+
+########################################################################################################################
+# Author: Cuong. Duong Manh <cuongdm8499@gmail.com>
+# Description:
+#     - TODO
+########################################################################################################################
+
+_KUBERNETES_TMP="/tmp/k8s"
+_KUBERNETES_UNTAR="/tmp/k8s/untar"
+_KUBERNETES_BIN="/opt/kubernetes"
+
+mkdir -p ${_KUBERNETES_TMP}
+mkdir -p ${_KUBERNETES_UNTAR}
+mkdir -p ${_KUBERNETES_BIN}
+
+curl -o "${_KUBERNETES_TMP}/kubernetes-server-linux-${KUBERNETES_ARCH}.tar.gz" \
+  --retry "${KUBERNETES_RETRY}" \
+  -L "${KUBERNETES_DOWNLOAD}/${KUBERNETES_VERSION}/kubernetes-server-linux-${KUBERNETES_ARCH}.tar.gz"
+
+curl -o "${_KUBERNETES_TMP}/kubelet" \
+  --retry "${KUBERNETES_RETRY}" \
+  -L "${KUBERNETES_DOWNLOAD}/${KUBERNETES_VERSION}/bin/linux/${KUBERNETES_ARCH}/kubelet"
+
+tar -xz -C "${_KUBERNETES_UNTAR}" -f "${_KUBERNETES_TMP}/kubernetes-server-linux-${KUBERNETES_ARCH}.tar.gz"
+
+cp -r "${_KUBERNETES_TMP}/kubelet" "${_KUBERNETES_BIN}"
+cp -r "${_KUBERNETES_UNTAR}/kubernetes/server/bin/kube-apiserver" "${_KUBERNETES_BIN}"
+cp -r "${_KUBERNETES_UNTAR}/kubernetes/server/bin/kube-controller-manager" "${_KUBERNETES_BIN}"
+cp -r "${_KUBERNETES_UNTAR}/kubernetes/server/bin/kube-proxy" "${_KUBERNETES_BIN}"
+cp -r "${_KUBERNETES_UNTAR}/kubernetes/server/bin/kube-scheduler" "${_KUBERNETES_BIN}"
+cp -r "${_KUBERNETES_UNTAR}/kubernetes/server/bin/kubectl" "${_KUBERNETES_BIN}"
+
+chmod +x "${_KUBERNETES_BIN}/kubelet"
+chmod +x "${_KUBERNETES_BIN}/kube-apiserver"
+chmod +x "${_KUBERNETES_BIN}/kube-controller-manager"
+chmod +x "${_KUBERNETES_BIN}/kube-proxy"
+chmod +x "${_KUBERNETES_BIN}/kube-scheduler"
+chmod +x "${_KUBERNETES_BIN}/kubectl"
+
+#podman image pull registry.vngcloud.vn/public/hyperkube:v1.28.2

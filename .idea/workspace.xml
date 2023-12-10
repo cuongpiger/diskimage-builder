@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a40b9417-4aa4-4907-884f-099df37608d2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/diskimage_builder/elements/vcontainer/element-deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu-common/environment.d/10-ubuntu-distro-name.bash" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu-common/environment.d/10-ubuntu-distro-name.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu-minimal/test-elements/focal-arm64-build-succeeds/environment.d/10-set-distro.bash" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu-minimal/test-elements/focal-arm64-build-succeeds/environment.d/10-set-distro.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu-minimal/test-elements/focal-build-succeeds/environment.d/10-set-distro.bash" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu-minimal/test-elements/focal-build-succeeds/environment.d/10-set-distro.bash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu/test-elements/focal-build-succeeds/environment.d/10-set-distro.bash" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/ubuntu/test-elements/focal-build-succeeds/environment.d/10-set-distro.bash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/containerd/post-install.d/00-containerd-download" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/containerd/post-install.d/00-containerd-download" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diskimage_builder/elements/vcontainer/post-install.d/00-vcontainer-pull-images" beforeDir="false" afterPath="$PROJECT_DIR$/diskimage_builder/elements/vcontainer/post-install.d/10-vcontainer-pull-images" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +35,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "lab/k8s-based-ubuntu",
-    "last_opened_file_path": "/home/cuongdm/Exdisk/Work/diskimage-builder/diskimage_builder/elements/fedora-coreos/environment.d",
+    "last_opened_file_path": "/home/cuongdm/Exdisk/Work/diskimage-builder/diskimage_builder/elements/vcontainer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,6 +47,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/diskimage_builder/elements/vcontainer" />
       <recent name="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos/environment.d" />
       <recent name="$PROJECT_DIR$/diskimage_builder/elements/fedora-coreos" />
     </key>
@@ -64,7 +64,8 @@
       <workItem from="1701966429158" duration="13000" />
       <workItem from="1701966448076" duration="74000" />
       <workItem from="1702004345886" duration="18028000" />
-      <workItem from="1702095952772" duration="3086000" />
+      <workItem from="1702095952772" duration="3152000" />
+      <workItem from="1702137172106" duration="8208000" />
     </task>
     <servers />
   </component>
